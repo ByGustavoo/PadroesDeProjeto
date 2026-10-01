@@ -1,11 +1,11 @@
 <div align="center"> <br>
-  <img align="center" alt="padroes-java" height="150" width="150" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+  <img align="center" alt="atlas-java" height="150" width="150" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
 </div>
 
 <br>
 
 <div align="center">
-  Exemplos práticos e executáveis dos principais padrões de projeto em Java 25 puro, sem framework e sem dependências. Cada padrão fica em seu próprio pacote e resolve um problema de um e-commerce (frete, pedidos, notificações, cotações, relatórios, aprovação de compra e cadastro de produtos), mostrando não só a estrutura, mas o motivo de usá-lo.
+  <strong>Atlas</strong> é um mapa prático dos principais padrões de projeto, com exemplos executáveis em Java 25 puro, sem framework e sem dependências. Cada padrão fica em seu próprio pacote e resolve um problema de um e-commerce (frete, pedidos, notificações, cotações, relatórios, aprovação de compra e cadastro de produtos), mostrando não só a estrutura, mas o motivo de usá-lo.
 </div>
 
 <br> <br>
@@ -34,7 +34,7 @@
 javac --release 25 -encoding UTF-8 -d out $(find src -name "*.java")
 
 # Executa o exemplo de cada padrão, em sequência
-java -cp out br.com.padroes.Aplicacao
+java -cp out br.com.atlas.Aplicacao
 ```
 
 🔹 PowerShell
@@ -43,7 +43,7 @@ java -cp out br.com.padroes.Aplicacao
 javac --release 25 -encoding UTF-8 -d out (Get-ChildItem -Recurse src -Filter *.java).FullName
 
 # Executa o exemplo de cada padrão (a opção entre aspas mantém os acentos no terminal do Windows)
-java "-Dstdout.encoding=UTF-8" -cp out br.com.padroes.Aplicacao
+java "-Dstdout.encoding=UTF-8" -cp out br.com.atlas.Aplicacao
 ```
 
 <br>
@@ -52,7 +52,7 @@ java "-Dstdout.encoding=UTF-8" -cp out br.com.padroes.Aplicacao
 
 ```bash
 # Roda as 40 verificações dos padrões e termina com código 1 se alguma falhar
-java -cp out br.com.padroes.VerificacaoPadroes
+java -cp out br.com.atlas.VerificacaoPadroes
 ```
 
 A verificação também é escrita em Java puro, sem framework de testes: cada padrão tem checagens do comportamento esperado e dos casos de erro, e o resumo final informa quantas passaram.
@@ -102,7 +102,7 @@ Para trocar a persistência em memória por JDBC, basta criar outra implementaç
 ## 📁 Estrutura
 
 ```
-src/main/java/br/com/padroes
+src/main/java/br/com/atlas
 ├── Aplicacao.java              # Ponto de entrada: executa o exemplo de cada padrão
 ├── Exemplo.java                # Contrato comum dos exemplos (titulo e executar)
 ├── Moeda.java                  # Formatação de valores em reais
@@ -120,11 +120,13 @@ src/main/java/br/com/padroes
     ├── model                   # Produto
     └── service                 # ProdutoService
 
-src/test/java/br/com/padroes
+src/test/java/br/com/atlas
 └── VerificacaoPadroes.java     # 40 verificações em Java puro, sem framework de testes
 ```
 
 Cada pacote de padrão tem também uma classe `Exemplo<Padrão>`, que monta o cenário e é chamada pela `Aplicacao`.
+
+Por ser um projeto de estudo, cada classe traz comentários curtos dizendo qual papel ela cumpre no padrão (contrato, implementação concreta, contexto, cliente, gancho, elo da cadeia), e os pontos-chave de cada uma são comentados onde acontecem.
 
 <br>
 
